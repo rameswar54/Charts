@@ -34,9 +34,10 @@ open class LineScatterCandleRadarRenderer: BarLineScatterCandleBubbleRenderer
         // draw vertical highlight lines
         if set.isVerticalHighlightIndicatorEnabled
         {
+            let offset: CGFloat = set.highlightLineCapType == .round ? 5 : 0 // 5 points else nothing
             context.beginPath()
-            context.move(to: CGPoint(x: point.x, y: viewPortHandler.contentTop))
-            context.addLine(to: CGPoint(x: point.x, y: viewPortHandler.contentBottom))
+            context.move(to: CGPoint(x: point.x, y: viewPortHandler.contentTop - offset))
+            context.addLine(to: CGPoint(x: point.x, y: viewPortHandler.contentBottom - offset))
             context.strokePath()
         }
         

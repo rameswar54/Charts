@@ -729,6 +729,7 @@ open class LineChartRenderer: LineRadarRenderer
             context.setLineWidth(set.highlightLineWidth)
             if set.highlightLineDashLengths != nil
             {
+                context.setLineCap(set.highlightLineCapType)
                 context.setLineDash(phase: set.highlightLineDashPhase, lengths: set.highlightLineDashLengths!)
             }
             else
